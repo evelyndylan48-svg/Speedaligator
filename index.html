@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>US Phone Number Generator</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <h1>Valid US Phone Number Generator</h1>
+    <label>
+        Area Code:
+        <input type="text" id="areaCodeInput" maxlength="3" pattern="\d{3}" placeholder="e.g. 806" style="width:60px;">
+        <select id="areaCodeSelect">
+            <option value="">-- Select --</option>
+        </select>
+    </label>
+    <label>
+        Prefix:
+        <input type="text" id="prefixInput" maxlength="3" pattern="[2-9]\d{2}" placeholder="e.g. 204" style="width:60px;">
+        <select id="prefixSelect">
+            <option value="">-- Select --</option>
+        </select>
+    </label>
+    <label>
+        Quantity (1–10,000):
+        <input type="number" id="quantity" min="1" max="10000" value="100">
+    </label>
+    <button id="generateBtn">Generate</button>
+    <button id="csvBtn" style="display:none;">Export CSV</button>
+    <button id="vcfBtn" style="display:none;">Export vCard</button>
+    <pre id="output"></pre>
+    <p class="note">
+        <b>Tip:</b> Enter any area code and prefix, or choose from the dropdowns.<br>
+        Export as CSV for Google Contacts, or vCard for iPhone.
+    </p>
+</div>
+<script src="area_codes.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
